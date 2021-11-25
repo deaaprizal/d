@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 export const scope = "app.component.SideBar";
+import MisteryBox from "../misteryBox";
 
 export default function SideBar({ halfmoon, bgTheme, setBgTheme }) {
+  const [misteryBox, setMisterBox] = useState(false);
   useEffect(() => {
     halfmoon.onDOMContentLoaded();
   }, [halfmoon]);
@@ -12,6 +14,14 @@ export default function SideBar({ halfmoon, bgTheme, setBgTheme }) {
       ? setBgTheme("dark-mode")
       : setBgTheme("light-mode");
     console.info("theme is successfulya changed to: ", bgTheme);
+  };
+
+  const getMisteryBox = (text) => {
+    text == "cuy" || text == "Cuy"
+      ? alert(
+          "Got You CUY!\nGue follback lu asli dah!\n\nDM IG aja ya capture easter egg ini ketauan oke? 👋"
+        )
+      : false;
   };
 
   return (
@@ -25,6 +35,7 @@ export default function SideBar({ halfmoon, bgTheme, setBgTheme }) {
             type="text"
             className="form-control"
             placeholder="Quick Access"
+            onChange={(e) => getMisteryBox(e.target.value)}
           />
           <div className="mt-10 font-size-12">
             Click <kbd>🎈</kbd> to get random directory
