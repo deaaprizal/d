@@ -4,7 +4,7 @@ export const scope = "app.component.home.journey.frontend";
 export default function BackEnd() {
   return (
     <div className="mw-full" style={{ width: "90%" }}>
-      <div className="card p-1 col-sm">
+      <div className="card col-sm" style={{padding: 10}}>
         <img
           src={backEndDev}
           className="img-fluid rounded-top"

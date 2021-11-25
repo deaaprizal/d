@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import SideBar from "./SideBar";
-import Content from "./Content";
-import BottomBar from "./BottomBar";
-export const scope = "app.containers.HomePage";
+import SideBar from "../Layout/SideBar";
+import BottomBar from "../Layout/BottomBar";
+export const scope = "app.containers.layout";
 const halfmoon = require("halfmoon");
 
-export default function Home() {
+export default function Layout(props) {
   const [bgTheme, setBgTheme] = useState("dark-mode");
   return (
     <div
@@ -13,7 +12,7 @@ export default function Home() {
       data-sidebar-type="overlayed-sm-and-lg"
     >
       <SideBar halfmoon={halfmoon} bgTheme={bgTheme} setBgTheme={setBgTheme} />
-      <Content halfmoon={halfmoon} bgTheme={bgTheme} />
+      {props.children}
       <BottomBar halfmoon={halfmoon} />
     </div>
   );

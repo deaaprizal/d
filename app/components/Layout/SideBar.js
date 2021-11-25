@@ -32,30 +32,30 @@ export default function SideBar({ halfmoon, bgTheme, setBgTheme }) {
         </div>
         <h5 className="sidebar-title">Local Disk (C:)</h5>
         <div className="sidebar-divider" />
-        <a href="#" className="sidebar-link sidebar-link-with-icon active">
+        <a href="/" className="sidebar-link sidebar-link-with-icon active">
           <span className="sidebar-icon">💻</span>
           Program Files
         </a>
-        <a href="/journey" className="sidebar-link sidebar-link-with-icon">
+        <a href="/c/about" className="sidebar-link sidebar-link-with-icon">
           <span className="sidebar-icon">👻</span>
           About
         </a>
         <br />
         <h5 className="sidebar-title">Local Disk (D:)</h5>
         <div className="sidebar-divider" />
-        <a href="#" className="sidebar-link sidebar-link-with-icon">
+        <a href="/d/frontend" className="sidebar-link sidebar-link-with-icon">
           <span className="sidebar-icon">📑</span>
           Frontend
         </a>
-        <a href="#" className="sidebar-link sidebar-link-with-icon">
+        <a href="/d/backend" className="sidebar-link sidebar-link-with-icon">
           <span className="sidebar-icon">📔</span>
           Backend
         </a>
-        <a href="#" className="sidebar-link sidebar-link-with-icon">
+        <a href="/d/playground" className="sidebar-link sidebar-link-with-icon">
           <span className="sidebar-icon">🎪</span>
           Playground
         </a>
-        <a href="#" className="sidebar-link sidebar-link-with-icon">
+        <a href="/d/favorite" className="sidebar-link sidebar-link-with-icon">
           <span className="sidebar-icon">💝</span>
           Favorite
         </a>

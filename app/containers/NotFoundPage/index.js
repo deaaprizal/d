@@ -1,19 +1,13 @@
-/**
- * NotFoundPage
- *
- * This is the page we show when the user visits a url that doesn't have a route
- *
- */
+import React from "react";
+import { FormattedMessage } from "react-intl";
+import Layout from "../../components/Layout";
+import Notfound from "../../components/Notfound";
+import messages from "./messages";
 
-import React from 'react';
-import { FormattedMessage } from 'react-intl';
-
-import messages from './messages';
-
-export default function NotFound() {
+export default function NotFoundPage() {
   return (
-    <h1>
-      <FormattedMessage {...messages.header} />
-    </h1>
+    <Layout>
+      <Notfound title={<FormattedMessage {...messages.header} />} />
+    </Layout>
   );
 }

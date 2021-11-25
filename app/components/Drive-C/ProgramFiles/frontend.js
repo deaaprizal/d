@@ -3,8 +3,8 @@ import webDevImg from "../../../images/webdev.jpg";
 export const scope = "app.component.home.journey.frontend";
 export default function FrontEnd() {
   return (
-    <div className="mw-full" style={{ width: "90%" }}>
-      <div className="card p-1 col-sm">
+    <div className="mw-full" style={{ width: "90%"}}>
+      <div className="card col-sm" style={{ padding: 10 }}>
         <img
           src={webDevImg}
           className="img-fluid rounded-top"
@@ -40,8 +40,10 @@ export default function FrontEnd() {
             <strong>LAINNYA</strong>
             <br />
             <code>
-              Git repository management, State management, Knowledge of
-              website components, Basic knowledge of UIUX, Knowledge of styling CSS native code, Knowledge of responsive structure & Improving design guideline.   
+              Git repository management, State management, Knowledge of website
+              components, Basic knowledge of UIUX, Knowledge of styling CSS
+              native code, Knowledge of responsive structure & Improving design
+              guideline.
             </code>
           </div>
           <div className="text-center mt-20">
