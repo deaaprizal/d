@@ -31,7 +31,7 @@ export default function BackEnd() {
             <br />
             <code>Lumen.</code>
           </div>
-          <div style={{marginTop: 10}}>
+          <div>
             <strong>Python</strong>
             <br />
             <code>Flask.</code>
@@ -43,7 +43,7 @@ export default function BackEnd() {
             <code>MariaDB, MongoDB, PostgreSQL.</code>
           </div>
           <hr />
-          <div style={{marginTop: 10}}>
+          <div>
             <strong>LAINNYA</strong>
             <br />
             <code>
