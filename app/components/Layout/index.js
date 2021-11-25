@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SideBar from "../Layout/SideBar";
 import BottomBar from "../Layout/BottomBar";
+import MisteryBox from "../misterybox";
 export const scope = "app.containers.layout";
 const halfmoon = require("halfmoon");
 
@@ -12,6 +13,7 @@ export default function Layout(props) {
       data-sidebar-type="overlayed-sm-and-lg"
     >
       <SideBar halfmoon={halfmoon} bgTheme={bgTheme} setBgTheme={setBgTheme} />
+      <MisteryBox />
       {props.children}
       <BottomBar halfmoon={halfmoon} />
     </div>
