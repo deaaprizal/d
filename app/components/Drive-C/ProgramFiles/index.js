@@ -6,10 +6,10 @@ export const scope = "app.component.programfiles";
 
 export default function ProgramFiles({ halfmoon, bgTheme }) {
   return (
-    <div className={`content-wrapper ${bgTheme}`}>
+    <div className={`content-wrapper ${halfmoon}`}>
       <div className="content row" style={{ margin: 0, padding: 0 }}>
         <div className="col-6-xl col-lg">
-          <FrontEnd />
+          <FrontEnd halfmoon={halfmoon}/>
         </div>
         <div className="col-6-xl col-lg">
           <BackEnd />

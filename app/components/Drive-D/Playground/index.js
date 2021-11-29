@@ -27,6 +27,7 @@ export default function Playground() {
             onChange={setHtml}
           />
           <iframe
+            sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
             style={{ backgroundColor: "#ffffff" }}
             srcDoc={srcDoc}
             title="output"
