@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 export const scope = "app.component.SideBar";
-import MisteryBox from "../misteryBox";
 
 export default function SideBar({ halfmoon, bgTheme, setBgTheme }) {
   const [misteryBox, setMisterBox] = useState(false);
