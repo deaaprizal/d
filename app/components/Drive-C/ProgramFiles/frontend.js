@@ -1,6 +1,7 @@
 import React from "react";
 import webDevImg from "../../../images/webdev.jpg";
 export const scope = "app.component.home.journey.frontend";
+
 export default function FrontEnd() {
   return (
     <div className="mw-full" style={{ width: "90%"}}>

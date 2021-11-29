@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 export const scope = "app.component.SideBar";
 
-export default function SideBar({ halfmoon, bgTheme, setBgTheme }) {
+export default function SideBar({ halfmoon }) {
   const [misteryBox, setMisterBox] = useState(false);
   useEffect(() => {
     halfmoon.onDOMContentLoaded();
@@ -9,10 +9,6 @@ export default function SideBar({ halfmoon, bgTheme, setBgTheme }) {
 
   const changeBgMode = () => {
     halfmoon.toggleDarkMode();
-    bgTheme === "light-mode"
-      ? setBgTheme("dark-mode")
-      : setBgTheme("light-mode");
-    console.info("theme is successfulya changed to: ", bgTheme);
   };
 
   const getMisteryBox = (text) => {
