@@ -77,6 +77,14 @@ const GlobalStyle = createGlobalStyle`
     top: 17px;
     right: 17px;
   }
+
+  .icon-close{
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
+
+  }
 `;
 
 export default GlobalStyle;
