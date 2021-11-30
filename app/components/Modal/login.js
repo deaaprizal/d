@@ -8,7 +8,7 @@ export default function ModalLogin() {
   const [massage, setMessage] = useState('')
 
   const ChangeInput = (input, e) => {
-    setNotif(false)
+    setMessage('')
     if (input == "phone") {
       let phone_number = e.target.value.toString()
       let getRegion = phone_number.slice(0, 1);
@@ -31,22 +31,8 @@ export default function ModalLogin() {
         phone: phone,
         password: password
       }
-      // loginCustomer(data)
-      //   .then(result => {
-      //     if (result.data.message == "login success") {
-      //       localStorage.setItem("customer", result.data.payload.data.customer_phone)
-      //       localStorage.setItem("customerID", result.data.payload.data.id)
-      //       isLogin(result.data.payload.data.id, result.data.payload.data.customer_phone)
-      //       setTimeout( () => {
-      //         setIsLoading(false)
-      //         loginShop()
-      //       }, 3000)
-      //     } else {
-      //       setIsLoading(false)
-      //       setNotif(true)
-      //       setMessage("Nomor telepon atau password salah")
-      //     }
-      //   })
+
+      console.log("data login ->", data)
     }
   }
 
@@ -76,6 +62,7 @@ export default function ModalLogin() {
                       aria-describedby="basic-addon1"
                       className="form-control input-login"
                       placeholder="Nomor HP"
+                      onClick={() => setMessage('')}
                       onChange={(e) => ChangeInput("phone", e)}
                       onKeyDown={(e) => e.keyCode === 13 ? (
                         login(),
@@ -92,6 +79,7 @@ export default function ModalLogin() {
                       className="form-control input-login"
                       placeholder="Password"
                       aria-label="Password"
+                      onClick={() => setMessage('')}
                       onChange={(e) => ChangeInput("password", e)}
                       onKeyDown={(e) => e.keyCode === 13 ? (
                         login(),
