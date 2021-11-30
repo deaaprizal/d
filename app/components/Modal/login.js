@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { FaLock, FaEye, FaEyeSlash, FaPhone, FaTimes } from "react-icons/fa";
+import GoogleLogin from 'react-google-login';
 
 export default function ModalLogin() {
   const [type, setType] = useState('password')
+
+  const responseGoogle = (response) => {
+    console.log(response);
+  }
 
   return (
     <>
@@ -60,6 +65,14 @@ export default function ModalLogin() {
                   <p className="my-5 text-center small">Belum punya akun?
                     <span className="small font-weight-bold mx-5">Daftar</span>
                   </p>
+                  <div className="text-center">
+                    <GoogleLogin
+                      clientId="60527082281-l9hb3hjgcpe48v78p86ak9pg2aucfann.apps.googleusercontent.com"
+                      onSuccess={responseGoogle}
+                      onFailure={responseGoogle}
+                      cookiePolicy={'single_host_origin'}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
