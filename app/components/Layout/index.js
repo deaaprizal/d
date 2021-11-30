@@ -3,6 +3,7 @@ import SideBar from "../Layout/SideBar";
 import BottomBar from "../Layout/BottomBar";
 import MisteryBox from "../misterybox";
 import ModalLogin from "../Modal/login";
+import ModalRegister from "../Modal/register";
 export const scope = "app.containers.layout";
 const halfmoon = require("halfmoon");
 
@@ -16,6 +17,7 @@ export default function Layout(props) {
       <SideBar halfmoon={halfmoon}/>
       <MisteryBox />
       <ModalLogin />
+      <ModalRegister />
       {props.children}
       <BottomBar halfmoon={halfmoon} />
     </div>
