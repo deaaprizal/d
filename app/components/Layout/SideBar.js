@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+
 export const scope = "app.component.SideBar";
 
 export default function SideBar({ halfmoon }) {
@@ -19,8 +21,22 @@ export default function SideBar({ halfmoon }) {
       : false;
   };
 
+  function onSlideSidebar(x) {
+    if (x < 10) {
+      halfmoon.toggleSidebar();
+    }
+  }
+
   return (
-    <div className="sidebar">
+    <motion.div
+      className="sidebar"
+      drag="x"
+      dragConstraints={{ left: 0, right: 0 }}
+      onDragEnd={(ev, inf) => {
+        const { x, y } = inf.point;
+        onSlideSidebar(x);
+      }}
+    >
       <div className="sidebar-menu">
         <div className="sidebar-brand" onClick={() => changeBgMode()}>
           ✨ Deacourse ✨
@@ -66,6 +82,6 @@ export default function SideBar({ halfmoon }) {
           Favorite
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 }
