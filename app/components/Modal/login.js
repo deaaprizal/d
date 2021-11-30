@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaLock, FaEye, FaEyeSlash, FaPhone, FaGoogle, FaFacebook, FaLinkedin } from "react-icons/fa";
+import GoogleLogin from 'react-google-login'
 
 export default function ModalLogin() {
   const [type, setType] = useState('password')
@@ -34,6 +35,10 @@ export default function ModalLogin() {
 
       console.log("data login ->", data)
     }
+  }
+
+  const responseGoogle = (response) => {
+    console.log(response);
   }
 
   return (
@@ -107,14 +112,17 @@ export default function ModalLogin() {
                   </div>
                   <p className="medium text-center pt-10 primary-color font-weight-bold">Social Media Login</p>
                   <div className="text-center my-20">
-                    <span className="px-5"><FaGoogle size="24"/></span>
-                    <span className="px-5"><FaFacebook size="24"/></span>
-                    <span className="px-5"><FaLinkedin size="24"/></span>
+                    <GoogleLogin
+                      clientId="60527082281-l9hb3hjgcpe48v78p86ak9pg2aucfann.apps.googleusercontent.com"
+                      onSuccess={responseGoogle}
+                      onFailure={responseGoogle}
+                      cookiePolicy={'single_host_origin'}
+                    />
                   </div>
                   <p className="pt-20 small primary-color">Belum punya akun?
                     <a href={"#registerView"} style={{ textDecoration: 'none' }}><span className="small font-weight-bold mx-5">Daftar</span></a>
                   </p>
-                </div>
+                </div>658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com
               </div>
             </div>
           </div>
