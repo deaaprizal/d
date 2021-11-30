@@ -27,6 +27,10 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.5em;
   }
 
+  .primary-color{
+    color:rgba(12,4,87,0.8);
+  }
+
   .primary-btn{
     background-color: rgba(12,4,87,0.8);
     border: 1px solid rgb(221, 221, 221);
@@ -84,6 +88,26 @@ const GlobalStyle = createGlobalStyle`
     top: 8px;
     cursor: pointer;
 
+  }
+
+  .line-style{
+    padding: 0;
+    margin: 24px 0px;
+    height: 3px;
+    background:rgba(12,4,87,0.8);
+    position: relative;
+  }
+  
+  .or-style{
+    text-align: center;
+    background: white;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    padding: 8px;
+    border-radius: 100%;
+    font-weight: bold;
+  }
   }
 `;
 

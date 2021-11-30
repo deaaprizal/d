@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { FaLock, FaEye, FaEyeSlash, FaPhone, FaGoogle, FaFacebook, FaLinkedin } from "react-icons/fa";
+import { FaLock, FaEye, FaEyeSlash, FaPhone, FaEnvelopeOpen, FaGoogle, FaFacebook, FaLinkedin } from "react-icons/fa";
 
-export default function ModalLogin() {
+export default function ModalRegister() {
   const [type, setType] = useState('password')
   const [phone, setPhone] = useState('')
   const [password, setPassword] = useState('')
@@ -38,12 +38,12 @@ export default function ModalLogin() {
 
   return (
     <>
-      <div className="modal bd-example-modal-lg" id="loginView" tabIndex="-1" role="dialog">
+      <div className="modal bd-example-modal-lg" id="registerView" tabIndex="-1" role="dialog">
         <div className="modal-dialog modal-lg" role="document">
           <div className="modal-content row">
             <div className="col-12 text-center">
-              <h2 className="primary-color mb-0">Welcome !</h2>
-              <h6 className="primary-color mt-0" style={{ marginBottom: 50 }}>Sign in to continue</h6>
+            <h2 className="primary-color mb-0">Hi !</h2>
+              <h6 className="primary-color mt-0" style={{ marginBottom: 50 }}>Create a new account</h6>
               <div className="row text-left">
                 <div className="col-12 float-left mb-10 px-10">
 
@@ -72,7 +72,27 @@ export default function ModalLogin() {
                     />
                   </div>
                 </div>
-            
+                <div className="col-12 float-left mb-10 px-10">
+
+                  <div className="position-relative">
+                    <FaEnvelopeOpen className="position-absolute FaLock-style" />
+                    <input
+                      autoFocus
+                      required
+                      type="email"
+                      aria-describedby="basic-addon1"
+                      className="form-control input-login"
+                      placeholder="Email"
+                      onClick={() => setMessage('')}
+                      onChange={(e) => ChangeInput("email", e)}
+                      onKeyDown={(e) => e.keyCode === 13 ? (
+                        login(),
+                        e.target.value = ""
+                      ) : null}
+                    />
+                  </div>
+                </div>
+
                 <div className="col-12 float-left mb-10 px-10">
                   <div className="position-relative">
                     <FaLock className="FaLock-style" />
@@ -97,22 +117,20 @@ export default function ModalLogin() {
                     </div>
                   </div>
                 </div>
-
                 <div className="col-12 p-10 mt-15">
-                  <p className="my-5 small primary-color font-weight-bold">Lupa Password ?</p>
-                  <p className="primary-btn my-10" onClick={() => login()}>MASUK</p>
-                  <a href="#" style={{ textDecoration: 'none' }}><p className="second-btn my-10">KEMBALI</p></a>
+                  <p className="primary-btn my-10" onClick={() => login()}>SIGN UP</p>
+                  <a href="#" style={{ textDecoration: 'none' }}><p className="second-btn my-10">Kembali</p></a>
                   <div className="line-style">
                     <div className="or-style primary-color">or</div>
                   </div>
-                  <p className="medium text-center pt-10 primary-color font-weight-bold">Social Media Login</p>
+                  <p className="medium text-center pt-10 primary-color font-weight-bold">Social Media Signup</p>
                   <div className="text-center my-20">
-                    <span className="px-5"><FaGoogle size="24"/></span>
-                    <span className="px-5"><FaFacebook size="24"/></span>
-                    <span className="px-5"><FaLinkedin size="24"/></span>
+                    <span className="px-5"><FaGoogle size="24" /></span>
+                    <span className="px-5"><FaFacebook size="24" /></span>
+                    <span className="px-5"><FaLinkedin size="24" /></span>
                   </div>
-                  <p className="pt-20 small primary-color">Belum punya akun?
-                    <a href={"#registerView"} style={{ textDecoration: 'none' }}><span className="small font-weight-bold mx-5">Daftar</span></a>
+                  <p className="pt-20 small primary-color">Already have on account?
+                    <a href={"#loginView"} style={{ textDecoration: 'none' }}><span className="small font-weight-bold mx-5">Sign in</span></a>
                   </p>
                 </div>
               </div>
