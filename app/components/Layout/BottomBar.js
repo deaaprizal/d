@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import ModalLogin from "../Modal/login";
 export const scope = "app.component.BottomBar";
 
-export default function BottomBar({ halfmoon }) {
+export default function BottomBar({ halfmoon, onActive }) {
   const [count, setCount] = useState(0);
-  
+
   return (
     <>
       <nav className="navbar navbar-fixed-bottom">
@@ -31,7 +30,7 @@ export default function BottomBar({ halfmoon }) {
         >
           🔔
         </a>
-        <ModalLogin />
+        <a className="navbar-text ml-auto" href={"#loginView"}>🙋‍♂️</a>
       </nav>
     </>
   );

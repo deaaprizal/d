@@ -27,55 +27,55 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.5em;
   }
 
-  .main-modal{
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-  }
-
-  .body-modal{
-    width: 500px;
-    background: white;
-    border-radius: 8px;
-    text-align: center;
-    position: relative;
-    margin-left: 14px;
-    margin-right: 14px;
-    position: relative;
-  }
-
   .primary-btn{
-    background-color: rgb(118, 70, 255);
+    background-color: rgba(12,4,87,0.8);
     border: 1px solid rgb(221, 221, 221);
     border-radius: 8px;
     color: white !important;
     padding: 12px;
     text-align: center;
+    cursor: pointer;
+  }
+
+  .second-btn{
+    border: 3px solid rgba(12,4,87,0.8);
+    border-radius: 8px;
+    color: rgba(12,4,87,0.8) !important;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
   }
 
   .small{
     font-size: 12px;
   }
 
-  .icon{
+  .input-login{
+    height: 50px !important;
+    border-radius: 8px !important;
+    padding-left: 40px !important;
+  }
+
+  .faIcon-style{
+    color:rgba(12,4,87,0.8);
+    top: 17px;
+    left: 17px;
+    transform: rotate(90deg);
+  }
+
+  .FaLock-style{
+    color: rgba(12,4,87,0.8);
     position: absolute;
-    background: white;
-    padding: 4px;
-    right: 0;
-    z-index: 1;
-    border-radius: 100%;
-    margin: 5px;
+    top: 17px;
+    left: 17px;
+  }
+
+  .FaEye-style{
+    color: rgba(12,4,87,0.8);
     cursor: pointer;
-    box-shadow: rgb(224 224 224) 0px 0px 5px;
+    position: absolute;
+    top: 17px;
+    right: 17px;
   }
 `;
 
