@@ -5,7 +5,8 @@ import ComingSoon from "../../ComingSoonPage/Loadable"
 export default function FrontendPage() {
   return (
     <Layout>
-      <ComingSoon />
+      <Frontend />
+      {/* <ComingSoon /> */}
     </Layout>
   );
 }
