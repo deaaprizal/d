@@ -20,7 +20,7 @@ export default function Intro() {
           </li>
         </ul>
       </nav>
-      <h1 className="text-center">🐱‍👤 Deacourse 🐱‍👤</h1>
+      <h3 className="text-center">🐱‍👤 Deacourse 🐱‍👤</h3>
       <hr />
       <p>
         Belajar teknologi & koding bareng <strong>Dea Afrizal</strong> di
