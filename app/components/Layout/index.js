@@ -5,9 +5,9 @@ import MisteryBox from "../misterybox";
 import ModalLogin from "../Modal/login";
 import ModalRegister from "../Modal/register";
 import { motion } from "framer-motion";
+import { coursePreview } from "../Drive-C/ProgramFiles/coursePreview";
 export const scope = "app.containers.layout";
 const halfmoon = require("halfmoon");
-
 export default function Layout(props) {
   function onSlideSidebar(x) {
     if (x >= 10) {
@@ -21,6 +21,7 @@ export default function Layout(props) {
       data-sidebar-type="overlayed-sm-and-lg"
     >
       <SideBar halfmoon={halfmoon} />
+      {coursePreview()}
       <MisteryBox />
       <ModalLogin halfmoon={halfmoon}/>
       <ModalRegister halfmoon={halfmoon}/>

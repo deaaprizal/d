@@ -10,14 +10,16 @@ export default function BottomBar({ halfmoon, onActive }) {
           onClick={() => halfmoon.toggleSidebar()}
           id="navbar-fixed-bottom-dropdown-toggle"
         >
-          ⚙
+          🍔
         </div>
-        <a className="navbar-brand ml-auto mb-10" href={"#"}>➕</a>
+        <a className="navbar-brand ml-auto mb-10" href={"#"}>
+          ➕
+        </a>
         <a
           className="navbar-brand ml-auto mr-xl-10"
-          href="#mistery-box"
+          href="#"
           data-toggle="tooltip"
-          data-title="Hi cuy! bener banget, ada course terbaru nih!"
+          data-title="hi!"
           role="button"
           style={{
             textDecoration: "none",
