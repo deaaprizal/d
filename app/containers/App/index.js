@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-
+import "./global.css"
 import DefaultPage from "../C/DefaultPage/Loadable";
 import AboutPage from "../C/AboutPage/Loadable";
 import FrontendPage from "../D/FrontendPage/Loadable";
