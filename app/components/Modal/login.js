@@ -1,12 +1,21 @@
 import React, { useState } from "react";
-import { FaLock, FaEye, FaEyeSlash, FaPhone, FaGoogle, FaFacebook, FaLinkedin } from "react-icons/fa";
+import { FaLock, FaEye, FaEyeSlash, FaPhone } from "react-icons/fa";
 import GoogleLogin from 'react-google-login'
 
-export default function ModalLogin() {
+export default function ModalLogin({ halfmoon }) {
   const [type, setType] = useState('password')
   const [phone, setPhone] = useState('')
   const [password, setPassword] = useState('')
   const [massage, setMessage] = useState('')
+
+  const onDarkMode = (type) => {
+    let mode = halfmoon.darkModeOn
+    if(type == 'text'){
+      return !mode ? 'primary-color' : null
+    }else if(type == 'bg'){
+      return !mode ? 'primary-bg-color' : 'second-bg-color'
+    }
+  }
 
   const ChangeInput = (input, e) => {
     setMessage('')
@@ -47,8 +56,10 @@ export default function ModalLogin() {
         <div className="modal-dialog modal-lg" role="document">
           <div className="modal-content row">
             <div className="col-12 text-center">
-              <h2 className="primary-color mb-0">Welcome !</h2>
-              <h6 className="primary-color mt-0" style={{ marginBottom: 50 }}>Sign in to continue</h6>
+              <h2 className={`${onDarkMode('text')} mb-0`}>Welcome !</h2>
+              <h6 className={`${onDarkMode('text')}`} style={{ marginBottom: 50 }}>
+                Sign in to continue
+              </h6>
               <div className="row text-left">
                 <div className="col-12 float-left mb-10 px-10">
 
@@ -59,8 +70,8 @@ export default function ModalLogin() {
                     </div>
                   }
 
-                  <div className="position-relative">
-                    <FaPhone className="position-absolute faIcon-style" />
+                  <div className="relative">
+                    <FaPhone className={`${onDarkMode('text')} icon-input icon-trasform.90`} />
                     <input
                       autoFocus
                       required
@@ -77,10 +88,10 @@ export default function ModalLogin() {
                     />
                   </div>
                 </div>
-            
+
                 <div className="col-12 float-left mb-10 px-10">
-                  <div className="position-relative">
-                    <FaLock className="FaLock-style" />
+                  <div className="relative">
+                    <FaLock className={`${onDarkMode('text')} icon-input`} />
                     <input
                       type={type}
                       className="form-control input-login"
@@ -95,22 +106,22 @@ export default function ModalLogin() {
                     />
                     <div className="see-password">
                       {type === "password" ?
-                        <FaEye className="FaEye-style" onClick={() => setType('text')} />
+                        <FaEye className={`${onDarkMode('text')} icon-r-style pointer-events-auto`} onClick={() => setType('text')} />
                         :
-                        <FaEyeSlash className="FaEye-style" onClick={() => setType('password')} />
+                        <FaEyeSlash className={`${onDarkMode('text')} icon-r-style pointer-events-auto`} onClick={() => setType('password')} />
                       }
                     </div>
                   </div>
                 </div>
 
                 <div className="col-12 p-10 mt-15">
-                  <p className="my-5 small primary-color font-weight-bold">Lupa Password ?</p>
-                  <p className="primary-btn my-10" onClick={() => login()}>MASUK</p>
-                  <a href="#" style={{ textDecoration: 'none' }}><p className="second-btn my-10">KEMBALI</p></a>
-                  <div className="line-style">
-                    <div className="or-style primary-color">or</div>
+                  <p className={`${onDarkMode('text')} my-5 small font-weight-bold`}>Lupa Password ?</p>
+                  <p className="btn btn-primary btn-block btn-lg my-10" onClick={() => login()}>Login</p>
+                  <a href="#" style={{ textDecoration: 'none' }}><p className="btn btn-block btn-lg my-10">Close</p></a>
+                  <div className={`${onDarkMode('bg')} line-style`}>
+                    <div className={!halfmoon.darkModeOn ? 'light-bg-color or-style primary-color' : 'dark-bg-color or-style'}>or</div>
                   </div>
-                  <p className="medium text-center pt-10 primary-color font-weight-bold">Social Media Login</p>
+                  <p className={`${onDarkMode('text')} medium text-center pt-10 font-weight-bold`}>Social Media Login</p>
                   <div className="text-center my-20">
                     <GoogleLogin
                       clientId="60527082281-l9hb3hjgcpe48v78p86ak9pg2aucfann.apps.googleusercontent.com"
@@ -119,7 +130,7 @@ export default function ModalLogin() {
                       cookiePolicy={'single_host_origin'}
                     />
                   </div>
-                  <p className="pt-20 small primary-color">Belum punya akun?
+                  <p className={`${onDarkMode('text')} pt-20 small`}>Belum punya akun?
                     <a href={"#registerView"} style={{ textDecoration: 'none' }}><span className="small font-weight-bold mx-5">Daftar</span></a>
                   </p>
                 </div>658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com

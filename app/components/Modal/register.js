@@ -1,11 +1,20 @@
 import React, { useState } from "react";
 import { FaLock, FaEye, FaEyeSlash, FaPhone, FaEnvelopeOpen, FaGoogle, FaFacebook, FaLinkedin } from "react-icons/fa";
 
-export default function ModalRegister() {
+export default function ModalRegister({ halfmoon }) {
   const [type, setType] = useState('password')
   const [phone, setPhone] = useState('')
   const [password, setPassword] = useState('')
   const [massage, setMessage] = useState('')
+
+  const onDarkMode = (type) => {
+    let mode = halfmoon.darkModeOn
+    if(type == 'text'){
+      return !mode ? 'primary-color' : null
+    }else if(type == 'bg'){
+      return !mode ? 'primary-bg-color' : 'second-bg-color'
+    }
+  }
 
   const ChangeInput = (input, e) => {
     setMessage('')
@@ -42,8 +51,8 @@ export default function ModalRegister() {
         <div className="modal-dialog modal-lg" role="document">
           <div className="modal-content row">
             <div className="col-12 text-center">
-            <h2 className="primary-color mb-0">Hi !</h2>
-              <h6 className="primary-color mt-0" style={{ marginBottom: 50 }}>Create a new account</h6>
+            <h2 className={`${onDarkMode('text')} mb-0`}>Hi !</h2>
+              <h6 className={`${onDarkMode('text')}`} style={{ marginBottom: 50 }}>Create a new account</h6>
               <div className="row text-left">
                 <div className="col-12 float-left mb-10 px-10">
 
@@ -54,8 +63,8 @@ export default function ModalRegister() {
                     </div>
                   }
 
-                  <div className="position-relative">
-                    <FaPhone className="position-absolute faIcon-style" />
+                  <div className="relative">
+                    <FaPhone className={`${onDarkMode('text')} icon-input icon-trasform.90`} />
                     <input
                       autoFocus
                       required
@@ -74,8 +83,8 @@ export default function ModalRegister() {
                 </div>
                 <div className="col-12 float-left mb-10 px-10">
 
-                  <div className="position-relative">
-                    <FaEnvelopeOpen className="position-absolute FaLock-style" />
+                  <div className="relative">
+                    <FaEnvelopeOpen className={`${onDarkMode('text')} icon-input`} />
                     <input
                       autoFocus
                       required
@@ -94,8 +103,8 @@ export default function ModalRegister() {
                 </div>
 
                 <div className="col-12 float-left mb-10 px-10">
-                  <div className="position-relative">
-                    <FaLock className="FaLock-style" />
+                  <div className="relative">
+                    <FaLock className={`${onDarkMode('text')} icon-input`} />
                     <input
                       type={type}
                       className="form-control input-login"
@@ -110,26 +119,26 @@ export default function ModalRegister() {
                     />
                     <div className="see-password">
                       {type === "password" ?
-                        <FaEye className="FaEye-style" onClick={() => setType('text')} />
+                        <FaEye className={`${onDarkMode('text')} icon-r-style pointer-events-auto`} onClick={() => setType('text')} />
                         :
-                        <FaEyeSlash className="FaEye-style" onClick={() => setType('password')} />
+                        <FaEyeSlash className={`${onDarkMode('text')} icon-r-style pointer-events-auto`} onClick={() => setType('password')} />
                       }
                     </div>
                   </div>
                 </div>
                 <div className="col-12 p-10 mt-15">
-                  <p className="primary-btn my-10" onClick={() => login()}>SIGN UP</p>
-                  <a href="#" style={{ textDecoration: 'none' }}><p className="second-btn my-10">Kembali</p></a>
-                  <div className="line-style">
-                    <div className="or-style primary-color">or</div>
+                  <p className="btn btn-primary btn-block btn-lg my-10" onClick={() => login()}>Sign Up</p>
+                  <a href="#" style={{ textDecoration: 'none' }}><p className="btn btn-block btn-lg my-10">Close</p></a>
+                  <div className={`${onDarkMode('bg')} line-style`}>
+                    <div className={!halfmoon.darkModeOn ? 'light-bg-color or-style primary-color' : 'dark-bg-color or-style'}>or</div>
                   </div>
-                  <p className="medium text-center pt-10 primary-color font-weight-bold">Social Media Signup</p>
+                  <p className={`${onDarkMode('text')} medium text-center pt-10 font-weight-bold`}>Social Media Signup</p>
                   <div className="text-center my-20">
                     <span className="px-5"><FaGoogle size="24" /></span>
                     <span className="px-5"><FaFacebook size="24" /></span>
                     <span className="px-5"><FaLinkedin size="24" /></span>
                   </div>
-                  <p className="pt-20 small primary-color">Already have on account?
+                  <p className={`${onDarkMode('text')} pt-20 small`}>Already have on account?
                     <a href={"#loginView"} style={{ textDecoration: 'none' }}><span className="small font-weight-bold mx-5">Sign in</span></a>
                   </p>
                 </div>

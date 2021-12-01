@@ -22,8 +22,8 @@ export default function Layout(props) {
     >
       <SideBar halfmoon={halfmoon} />
       <MisteryBox />
-      <ModalLogin />
-      <ModalRegister />
+      <ModalLogin halfmoon={halfmoon}/>
+      <ModalRegister halfmoon={halfmoon}/>
       <motion.div
         className="position-absolute h-full w-100 z-10"
         drag="x"
