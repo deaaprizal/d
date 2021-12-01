@@ -10,6 +10,7 @@ export const coursePreview = () => {
   const [email, setEmail] = useState("");
   const [nomor, setNomor] = useState("");
   const [kota, setKota] = useState("");
+  const [gelombang, setGelombang] = useState(1);
 
   const getNama = (nama) => {
     setNama(nama);
@@ -31,7 +32,7 @@ export const coursePreview = () => {
       nomor.length >= 8 &&
       kota.length >= 3
     ) {
-      return (window.location.href = `https://api.whatsapp.com/send?phone=+6281285241889&text=Hi%20bang%2C%20daftar%20deacourse%20untuk%20sesi%20react%20js%20fundamental:%0A%0A${nama}%0A${email}%0A${nomor}%0A${kota}`);
+      return (window.location.href = `https://api.whatsapp.com/send?phone=+6281285241889&text=Hi%20bang%2C%20daftar%20deacourse%20untuk%20sesi%20react%20js%20fundamental:%0A%0A${nama}%0A${email}%0A${nomor}%0A${kota}%0AGelombang%20${gelombang}`);
     } else {
       alert("isi data dengan lengkap & benar");
     }
@@ -150,6 +151,17 @@ export const coursePreview = () => {
                     </div>
                   </div>
                 </details>
+                <details className="collapse-panel">
+                  <summary className="collapse-header">
+                    <span>📅 5 Desember 2021 (gelombang 2)</span>
+                    <br />
+                    <span className="text-muted">12:00 WIB - 17:30 WIB</span>
+                    <span className="text-muted float-right">Rp. 65.000</span>
+                  </summary>
+                  <div className="collapse-content p-5 text-center">
+                    materi dan ketentuan sama seperti gelombang 1
+                  </div>
+                </details>
                 <details className="collapse-panel" open>
                   <summary className="collapse-header">
                     <strong>Materi Pembelajaran</strong>
@@ -186,6 +198,10 @@ export const coursePreview = () => {
                         </li>
                         <li>merubah mindset tentang javascript</li>
                         <li>bisa setup & running react js secara lokal</li>
+                        <li>
+                          gratis 1 module project react js yang mudah dimodif
+                          sana sini
+                        </li>
                       </ol>
                     </div>
                   </div>
@@ -239,6 +255,33 @@ export const coursePreview = () => {
                   id="kota"
                   onChange={(e) => getKota(e.target.value)}
                 />
+                <label htmlFor="gelombang" className="required">
+                  pilih tanggal ikut serta:
+                </label>
+                <br />
+
+                <div className="custom-radio">
+                  <input
+                    type="radio"
+                    name="radio-set-1"
+                    id="radio-1"
+                    checked="checked"
+                    value="1"
+                  />
+                  <label for="radio-1">4 Desember 2021</label>
+                </div>
+
+                <div className="custom-radio">
+                  <input
+                    type="radio"
+                    name="radio-set-1"
+                    id="radio-2"
+                    value="2"
+                    onClick={() => setGelombang(2)}
+                  />
+                  <label for="radio-2">5 Desember 2021</label>
+                </div>
+
                 <div className="text-right">
                   <button
                     className="btn btn-primary"
