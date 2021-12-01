@@ -27,8 +27,24 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.5em;
   }
 
-  .primary-color{
+  .primary-color {
     color:rgba(12,4,87,0.8);
+  }
+
+  .primary-bg-color{
+    background-color: rgba(12,4,87,0.8);
+  }
+
+  .second-bg-color{
+    background-color: #ffff;
+  }
+
+  .dark-bg-color{
+    background-color: rgb(25,28,32) !important;
+  }
+
+  .light-bg-color{
+    background-color: #ffff
   }
 
   .primary-btn{
@@ -60,22 +76,17 @@ const GlobalStyle = createGlobalStyle`
     padding-left: 40px !important;
   }
 
-  .faIcon-style{
-    color:rgba(12,4,87,0.8);
+  .icon-input{
     top: 17px;
     left: 17px;
+    position: absolute;
+  }
+
+  .icon-trasform.90{
     transform: rotate(90deg);
   }
 
-  .FaLock-style{
-    color: rgba(12,4,87,0.8);
-    position: absolute;
-    top: 17px;
-    left: 17px;
-  }
-
-  .FaEye-style{
-    color: rgba(12,4,87,0.8);
+  .icon-r-style{
     cursor: pointer;
     position: absolute;
     top: 17px;
@@ -94,7 +105,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 24px 0px;
     height: 3px;
-    background:rgba(12,4,87,0.8);
     position: relative;
   }
   
