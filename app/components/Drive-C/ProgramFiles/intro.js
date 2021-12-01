@@ -11,7 +11,7 @@ export default function Intro() {
             <a href="#">Home</a>
           </li>
           <li className="breadcrumb-item">
-            <a href="#" onClick={() => halfmoon.toggleSidebar()}>
+            <a href="#"   onClick={() => halfmoon.toggleSidebar()}>
               Drive C
             </a>
           </li>
@@ -30,13 +30,13 @@ export default function Intro() {
         <br />
         <br />
         Dan tentu sebagai bekal masa depan kalian karena materi yang diberikan
-        relevan seperti apa yang ada di dunia kerja IT saat ini{" "}
-        <span
+        relevan seperti apa yang ada di dunia kerja IT saat ini.{" "}
+        {/* <span
           className="badge badge-primary mb-10"
           onClick={() => (window.location.href = "/c/about")}
         >
           Detail Lebih Lengkap
-        </span>
+        </span> */}
       </p>
       <div
         className="alert alert-primary row m-auto filled-dm w-full mw-full"
@@ -53,7 +53,7 @@ export default function Intro() {
           <h4 className="alert-heading">Tips: memilih level pembelajaran</h4>
           <small>
             Untuk kamu yang baru mulai tertarik dunia coding, bisa mulai
-            mengikuti sesi yang tersedia di <a href="">Level 1</a>
+            mengikuti sesi yang tersedia di <b>Level 1</b>
           </small>
         </div>
       </div>
