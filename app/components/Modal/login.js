@@ -10,9 +10,9 @@ export default function ModalLogin({ halfmoon }) {
 
   const onDarkMode = (type) => {
     let mode = halfmoon.darkModeOn
-    if(type == 'text'){
+    if (type == 'text') {
       return !mode ? 'primary-color' : null
-    }else if(type == 'bg'){
+    } else if (type == 'bg') {
       return !mode ? 'primary-bg-color' : 'second-bg-color'
     }
   }
@@ -70,7 +70,7 @@ export default function ModalLogin({ halfmoon }) {
                     </div>
                   }
 
-                  <div className="relative">
+                  <div className="position-relative">
                     <FaPhone className={`${onDarkMode('text')} icon-input icon-trasform.90`} />
                     <input
                       autoFocus
@@ -90,7 +90,7 @@ export default function ModalLogin({ halfmoon }) {
                 </div>
 
                 <div className="col-12 float-left mb-10 px-10">
-                  <div className="relative">
+                  <div className="position-relative">
                     <FaLock className={`${onDarkMode('text')} icon-input`} />
                     <input
                       type={type}
@@ -115,7 +115,9 @@ export default function ModalLogin({ halfmoon }) {
                 </div>
 
                 <div className="col-12 p-10 mt-15">
-                  <p className={`${onDarkMode('text')} my-5 small font-weight-bold`}>Lupa Password ?</p>
+                  <a href={"#forgetPassView"} style={{ textDecoration: 'none' }}>
+                    <p className={`${onDarkMode('text')} my-5 small font-weight-bold`}>Lupa Password ?</p>
+                  </a>
                   <p className="btn btn-primary btn-block btn-lg my-10" onClick={() => login()}>Login</p>
                   <a href="#" style={{ textDecoration: 'none' }}><p className="btn btn-block btn-lg my-10">Close</p></a>
                   <div className={`${onDarkMode('bg')} line-style`}>

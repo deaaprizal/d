@@ -47,25 +47,6 @@ const GlobalStyle = createGlobalStyle`
     background-color: #ffff
   }
 
-  .primary-btn{
-    background-color: rgba(12,4,87,0.8);
-    border: 1px solid rgb(221, 221, 221);
-    border-radius: 8px;
-    color: white !important;
-    padding: 12px;
-    text-align: center;
-    cursor: pointer;
-  }
-
-  .second-btn{
-    border: 3px solid rgba(12,4,87,0.8);
-    border-radius: 8px;
-    color: rgba(12,4,87,0.8) !important;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-  }
-
   .small{
     font-size: 12px;
   }
@@ -80,6 +61,25 @@ const GlobalStyle = createGlobalStyle`
     top: 17px;
     left: 17px;
     position: absolute;
+  }
+
+  .otp-input{
+    width: 29px !important;
+    margin: 5px !important;
+    height: 43px !important;
+    padding: 12px;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
   }
 
   .icon-trasform.90{

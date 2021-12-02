@@ -17,7 +17,8 @@ export default function BottomBar({ halfmoon, onActive }) {
         </a>
         <a
           className="navbar-brand ml-auto mr-xl-10"
-          href="#"
+          // href="#"
+          href="#loginView"
           data-toggle="tooltip"
           data-title="hi!"
           role="button"

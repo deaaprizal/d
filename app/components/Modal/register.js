@@ -63,7 +63,7 @@ export default function ModalRegister({ halfmoon }) {
                     </div>
                   }
 
-                  <div className="relative">
+                  <div className="position-relative">
                     <FaPhone className={`${onDarkMode('text')} icon-input icon-trasform.90`} />
                     <input
                       autoFocus
@@ -83,7 +83,7 @@ export default function ModalRegister({ halfmoon }) {
                 </div>
                 <div className="col-12 float-left mb-10 px-10">
 
-                  <div className="relative">
+                  <div className="position-relative">
                     <FaEnvelopeOpen className={`${onDarkMode('text')} icon-input`} />
                     <input
                       autoFocus
@@ -103,7 +103,7 @@ export default function ModalRegister({ halfmoon }) {
                 </div>
 
                 <div className="col-12 float-left mb-10 px-10">
-                  <div className="relative">
+                  <div className="position-relative">
                     <FaLock className={`${onDarkMode('text')} icon-input`} />
                     <input
                       type={type}

@@ -4,6 +4,7 @@ import BottomBar from "../Layout/BottomBar";
 import MisteryBox from "../misterybox";
 import ModalLogin from "../Modal/login";
 import ModalRegister from "../Modal/register";
+import ModalForgetPassword from "../Modal/forgetPassword";
 import { motion } from "framer-motion";
 import { coursePreview } from "../Drive-C/ProgramFiles/coursePreview";
 export const scope = "app.containers.layout";
@@ -25,6 +26,7 @@ export default function Layout(props) {
       <MisteryBox />
       <ModalLogin halfmoon={halfmoon}/>
       <ModalRegister halfmoon={halfmoon}/>
+      <ModalForgetPassword halfmoon={halfmoon}/>
       <motion.div
         className="position-absolute h-full w-100 z-10"
         drag="x"
