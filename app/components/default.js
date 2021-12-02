@@ -4,6 +4,7 @@ export const scope = "app.containers.defaultpage";
 
 //main routes: showing default component
 export default function Default() {
-  const [bgTheme, setBgTheme] = useState("dark-mode");
-  return <ProgramFiles bgTheme={bgTheme} setBgTheme={setBgTheme} />;
+  
+  return <ProgramFiles />;
 }
+

@@ -1,31 +1,33 @@
 import React, { useState, useEffect } from "react";
-export const scope = "app.component.SideBar";
-import MisteryBox from "../misteryBox";
+import { motion } from "framer-motion";
 
-export default function SideBar({ halfmoon, bgTheme, setBgTheme }) {
-  const [misteryBox, setMisterBox] = useState(false);
+export const scope = "app.component.SideBar";
+
+export default function SideBar({ halfmoon }) {
   useEffect(() => {
     halfmoon.onDOMContentLoaded();
   }, [halfmoon]);
 
   const changeBgMode = () => {
     halfmoon.toggleDarkMode();
-    bgTheme === "light-mode"
-      ? setBgTheme("dark-mode")
-      : setBgTheme("light-mode");
-    console.info("theme is successfulya changed to: ", bgTheme);
   };
 
-  const getMisteryBox = (text) => {
-    text == "cuy" || text == "Cuy"
-      ? alert(
-          "Got You CUY!\nGue follback lu asli dah!\n\nDM IG aja ya capture easter egg ini ketauan oke? 👋"
-        )
-      : false;
-  };
+  function onSlideSidebar(x) {
+    if (x < 10) {
+      halfmoon.toggleSidebar();
+    }
+  }
 
   return (
-    <div className="sidebar">
+    <motion.div
+      className="sidebar"
+      drag="x"
+      dragConstraints={{ left: 0, right: 0 }}
+      onDragEnd={(ev, inf) => {
+        const { x, y } = inf.point;
+        onSlideSidebar(x);
+      }}
+    >
       <div className="sidebar-menu">
         <div className="sidebar-brand" onClick={() => changeBgMode()}>
           ✨ Deacourse ✨
@@ -35,15 +37,14 @@ export default function SideBar({ halfmoon, bgTheme, setBgTheme }) {
             type="text"
             className="form-control"
             placeholder="Quick Access"
-            onChange={(e) => getMisteryBox(e.target.value)}
           />
           <div className="mt-10 font-size-12">
-            Click <kbd>🎈</kbd> to get random directory
+          <kbd>🎈</kbd> beta version 0.1.0
           </div>
         </div>
         <h5 className="sidebar-title">Local Disk (C:)</h5>
         <div className="sidebar-divider" />
-        <a href="/" className="sidebar-link sidebar-link-with-icon active">
+        <a href="/" className="sidebar-link sidebar-link-with-icon">
           <span className="sidebar-icon">💻</span>
           Program Files
         </a>
@@ -71,6 +72,6 @@ export default function SideBar({ halfmoon, bgTheme, setBgTheme }) {
           Favorite
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 }

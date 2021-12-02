@@ -5,6 +5,8 @@ import ComingSoon from "../../ComingSoonPage/Loadable"
 export default function FrontendPage() {
   return (
     <Layout>
+      {/* untuk test redux by redux-saga uncomment <Frontend /> */}
+      {/* <Frontend /> */}
       <ComingSoon />
     </Layout>
   );
